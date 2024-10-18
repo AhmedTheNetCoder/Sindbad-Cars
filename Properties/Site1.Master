@@ -1,0 +1,308 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Sindbad_Cars.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Data Tables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Bootstrap/js/popper.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+        <style type="text/css">
+        .auto-style1 {
+            width: 96px;
+            height: 77px;
+        }
+        .auto-style2 {
+            display: inline-block;
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            line-height: inherit;
+            white-space: nowrap;
+            margin-top: 0px;
+            color: #FFFFFF
+        }
+        .footer-dark {
+  padding:50px 0;
+  color:#f0f9ff;
+  background-color:#000000;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+        .auto-style3 {
+            width: 40px;
+            height: 40px;
+        }
+        .auto-style4 {
+            width: 50px;
+            height: 50px;
+        }
+        .auto-style5 {
+            width: 40px;
+            height: 40px;
+        }
+                .auto-style6 {
+            width: 45px;
+            height: 40px;
+        }
+
+                .footer {
+    padding: 20px 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+.footer h3 {
+    color: #f8f8f8;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.footer .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ccc;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+}
+
+/* General Navbar Styling to Match Footer */
+.navbar {
+    background-color: #000000; /* Dark background for consistency with footer */
+    border-bottom: none; /* Removing any default border */
+}
+
+.nav-link {
+    color: #FFFFFF; /* Ensures all navigation links are white */
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #CCCCCC; /* Slightly lighter color on hover for better interaction feedback */
+}
+
+.navbar-brand img {
+    height: 40px; /* Adjust logo size appropriately */
+}
+
+/* Responsive behavior for better mobile display */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        border-color: #FFFFFF; /* Make toggler visible against dark background */
+    }
+    .text-center mt-4 foote{
+        background: white;
+    }
+
+}
+    </style>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+
+            <nav class="navbar navbar-expand-lg navbar-light" style="color: #FFFFFF; background-color: #000000">
+                <a class="navbar-brand" href="index.aspx">
+                    <img src="imgs/random/Sindbad.png" class="auto-style1"/>
+                </a>
+                <span class="text-white">
+                    <a class="auto-style2" href="index.aspx">
+                        Sindbad Cars
+                    </a>
+                </span>
+
+                <%--using boostrab library we can toggle the navbar--%>
+
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Index.aspx" style="color: #FFFFFF">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Ranges.aspx" style="color: #FFFFFF">Ranges</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Compact.aspx" style="color: #FFFFFF">Compact Cars</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="MPV.aspx" style="color: #FFFFFF">MPV Cars</a>
+                        </li>
+
+                    </ul>
+                     
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" href="Admin.aspx" ID="LinkButton4" runat="server" ForeColor="White" OnClick="LinkButton4_Click">Admin Page</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" href="LoginForm.aspx" ID="LinkButton1" runat="server" ForeColor="White" OnClick="LinkButton1_Click1">User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" href="SignUpForm.aspx" ID="LinkButton2" runat="server" ForeColor="White" OnClick="LinkButton2_Click">Sign Up</asp:LinkButton>
+                        </li>
+                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" ForeColor="White" OnClick="LinkButton3_Click">Log Out</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" ForeColor="White" OnClick="LinkButton7_Click">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            </div>
+
+
+        <!-- Main Content Placeholder -->
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+ 
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- About the Company -->
+            <div class="col-md-4 footer">
+                <h3>Sindbad Cars</h3>
+                <p>Discover the Perfect Ride with Sindbad Cars: Your Gateway to Quality Pre-Owned Vehicles at Unbeatable Prices. Experience the Difference Today!</p>
+            </div>
+            <!-- Navigation Links -->
+            <div class="col-md-4 footer">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="MPV.aspx">MPV Cars</a></li>
+                    <li><a href="Compact.aspx">Compact Cars</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Location and Social Media -->
+            <div class="col-md-4 footer">
+                <h3>Find Us</h3>
+                <a href="https://www.google.com/maps/place/National+University+of+Science+and+Technology+(College+of+Engineering,+Caledonian+Campus)/@23.6407492,58.2162601,17z/data=!4m15!1m8!3m7!1s0x3e8dfc9369db9d95:0x57afe2923c208e99!2sNational+University+of+Science+and+Technology+(College+of+Engineering,+Caledonian+Campus)!8m2!3d23.6407443!4d58.2188404!10e1!16s%2Fg%2F120wkkmm!3m5!1s0x3e8dfc9369db9d95:0x57afe2923c208e99!8m2!3d23.6407443!4d58.2188404!16s%2Fg%2F120wkkmm?entry=ttu" target="_blank">View on Google Maps</a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/"><img src="imgs/random/1713419166FB_Logo_PNG.png" alt="Facebook" class="auto-style5"></a>
+                    <a href="https://twitter.com"><img src="imgs/random/1691832460x-twitter-logo-png.png" alt="Twitter" class="auto-style6"></a>
+                    <a href="https://www.snapchat.com/"><img src="imgs/random/snapchat-logo-snapchat-logo-transparent-snapchat-icon-transparent-free-free-png.png" alt="Snapchat" class="auto-style4"></a>
+                    <a href="https://www.instagram.com/"><img src="imgs/random/Instagram_icon.png" alt="Instagram" class="auto-style3" ></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 footer">
+            <p>Copyright © 2024 Sindbad Cars. All rights reserved.</p>
+        </div>
+        </div>
+    </footer>
+</form>
+<!-- End of Footer -->
+</body>
+</html>
+
